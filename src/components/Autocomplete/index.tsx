@@ -53,7 +53,10 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
   }, [value]);
 
   return (
-    <div className={autocompleteStyles['container']}>
+    <div
+      data-testid="autocomplete-container"
+      className={autocompleteStyles['container']}
+    >
       {renderInput({
         onClick: () => {
           if (inputValue && !optionSelected) {
@@ -78,7 +81,10 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
       })}
 
       {open && (
-        <div className={autocompleteStyles['options']}>
+        <div
+          data-testid="autocomplete-options"
+          className={autocompleteStyles['options']}
+        >
           {error && <>{errorMessage}</>}
           {!error && loading && <>Loading...</>}
           {!error && !loading && (
@@ -88,6 +94,7 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
                   {options.map(opt => {
                     return (
                       <div
+                        data-testid="autocomplete-option"
                         key={opt}
                         onMouseDown={e => e.preventDefault()}
                         onClick={() => {

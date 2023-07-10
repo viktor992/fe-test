@@ -12,7 +12,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json', 
+    project: './tsconfig.json',
   },
   plugins: ['react-refresh'],
   rules: {
@@ -22,4 +22,17 @@ module.exports = {
     ],
     '@typescript-eslint/no-non-null-assertion': 'off',
   },
+  overrides: [
+    {
+      files: [
+        '**/*.spec.js',
+        '**/*.spec.jsx',
+        '**/__tests__/**/*.[jt]s?(x)',
+        '**/?(*.)+(spec|test).[tj]s?(x)',
+      ],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

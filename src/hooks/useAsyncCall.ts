@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-export const useAsyncCall = <T>(fetcher: (params: string) => Promise<T[]>) => {
-  const [params, setParams] = useState<string>();
+export const useAsyncCall = <T, U>(fetcher: (params: U) => Promise<T[]>) => {
+  const [params, setParams] = useState<U>();
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState<unknown>();
   const [loading, setLoading] = useState<boolean>();

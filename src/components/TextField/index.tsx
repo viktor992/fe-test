@@ -28,8 +28,9 @@ export const TextField: React.FC<TextFieldProps> = ({
         }
       >
         <input
-          className={textFieldStyles.input}
           id={id}
+          data-testid="input"
+          className={textFieldStyles.input}
           {...props}
           disabled={disabled}
         />

@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: flex-start;
   flex-direction: column;
+  width: 100%;
 }
 
 .input {
@@ -21,6 +22,7 @@
   border: 4px solid var(--text-border-color);
   display: inline-flex;
   transition: border-color 0.5s;
+  width: inherit;
   &:hover,
   &:focus-within {
     border: 4px solid var(--text-border-focused-color);
