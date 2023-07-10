@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { useEffect, useRef, useState } from 'react';
 
 export const useAsyncCall = <T, U>(fetcher: (params: U) => Promise<T[]>) => {
@@ -27,7 +28,6 @@ export const useAsyncCall = <T, U>(fetcher: (params: U) => Promise<T[]>) => {
     };
     if (params) {
       setLoading(true);
-      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       timeout.current = setTimeout(callApi, 600);
     }
     return () => {
