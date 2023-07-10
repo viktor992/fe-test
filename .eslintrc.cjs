@@ -6,13 +6,13 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
     'eslint-config-prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: './tsconfig.json', 
   },
   plugins: ['react-refresh'],
   rules: {
